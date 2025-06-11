@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -103,7 +103,7 @@ namespace LtScience.Modules
                 return;
 
             part.force_activate();
-            StartCoroutine("SlowUpdate");
+            StartCoroutine(Localizer.Format("#LOC_lTech_79"));
         }
 
         IEnumerator SlowUpdate()

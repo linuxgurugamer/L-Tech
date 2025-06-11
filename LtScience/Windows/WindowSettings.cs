@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -25,7 +25,7 @@ namespace LtScience.Windows
 {
     internal static class WindowSettings
     {
-        internal static string title = "L-Tech Settings";
+        internal static string title = Localizer.Format("#LOC_lTech_224");
         internal static Rect position = new Rect(20, 60, 0, 0);
         internal static bool showWindow;
 
@@ -44,7 +44,7 @@ namespace LtScience.Windows
                 title = Localizer.Format("#autoLOC_LTech_Settings_001");
 
                 Rect rect = new Rect(position.width - 20, 4, 18, 18);
-                _label = "x";
+                _label = Localizer.Format("#LOC_lTech_225");
                 _tooltip = Localizer.Format("#autoLOC_LTech_Settings_tt_001");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 if (GUI.Button(rect, _guiLabel))
@@ -106,12 +106,12 @@ namespace LtScience.Windows
 
                 // Resolution slider control
                 GUILayout.BeginHorizontal();
-                _label = (100 * Settings.minResolution).ToString("0");
+                _label = (100 * Settings.minResolution).ToString(Localizer.Format("#LOC_lTech_226"));
                 _tooltip = Localizer.Format("#autoLOC_LTech_Settings_tt_007b");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 GUILayout.Label(_guiLabel, GUILayout.Width(20), GUILayout.Height(20));
                 Settings.resolution = GUILayout.HorizontalSlider(Settings.resolution, Settings.minResolution, Settings.maxResolution, GUILayout.Width(width - 45), GUILayout.Height(20));
-                _label = (100 * Settings.maxResolution).ToString("0");
+                _label = (100 * Settings.maxResolution).ToString(Localizer.Format("#LOC_lTech_227"));
                 _tooltip = Localizer.Format("#autoLOC_LTech_Settings_tt_007b");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 GUILayout.Label(_guiLabel, GUILayout.Width(25), GUILayout.Height(20));
@@ -125,12 +125,12 @@ namespace LtScience.Windows
 
                 // Shuttertime slider control
                 GUILayout.BeginHorizontal();
-                _label = Settings.minShuttertime.ToString("0.#");
+                _label = Settings.minShuttertime.ToString(Localizer.Format("#LOC_lTech_228"));
                 _tooltip = Localizer.Format("#autoLOC_LTech_Settings_tt_008b");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 GUILayout.Label(_guiLabel, GUILayout.Width(20), GUILayout.Height(20));
                 Settings.shuttertime = GUILayout.HorizontalSlider(Settings.shuttertime, Settings.minShuttertime, Settings.maxShuttertime, GUILayout.Width(width - 45), GUILayout.Height(20));
-                _label = Settings.maxShuttertime.ToString("0");
+                _label = Settings.maxShuttertime.ToString(Localizer.Format("#LOC_lTech_229"));
                 _tooltip = Localizer.Format("#autoLOC_LTech_Settings_tt_008b");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 GUILayout.Label(_guiLabel, GUILayout.Width(25), GUILayout.Height(20));

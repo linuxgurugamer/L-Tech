@@ -12,8 +12,8 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_1
-        default = #LOC_LTech_2
+        default = We should send more rovers here!
+        default = This cave is very interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -30,9 +30,9 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_3
-        default = #LOC_LTech_4
-        default = #LOC_LTech_5
+        default = What an amazing discovery!
+        default = This beast used to terrorise our rockets.
+        default = We should send a device to take tissue samples from this deceased lifeform.
     }
 }
 EXPERIMENT_DEFINITION
@@ -49,8 +49,8 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_6
-        default = #LOC_LTech_7
+        default = It can't be, is that a face?
+        default = I wonder if this formed naturally or somebody carved it.
     }
 }
 EXPERIMENT_DEFINITION
@@ -67,9 +67,9 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_8
-        default = #LOC_LTech_9
-        default = #LOC_LTech_10
+        default = Interesting, somebody else beat us here.
+        default = Shh! I think it's looking back at us.
+        default = Is the rest of it underground?
     }
 }
 EXPERIMENT_DEFINITION
@@ -86,8 +86,8 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_11
-        default = #LOC_LTech_12
+        default = We should investigate this further!
+        default = I wonder what's under all the dirt.
     }
 }
 EXPERIMENT_DEFINITION
@@ -104,7 +104,7 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_13
+        default = Shouldn't we take pictures of the unknown?
     }
 }
 EXPERIMENT_DEFINITION
@@ -121,9 +121,9 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_13
-        default = #LOC_LTech_14
-        default = #LOC_LTech_15
+        default = Shouldn't we take pictures of the unknown?
+        default = This picture of the space center is a good test of our camera. But shouldn't we take pictures of more interesting things?
+        default = AHH! Oh wait it's just the space center.
     }
 }
 EXPERIMENT_DEFINITION
@@ -140,7 +140,7 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_16
+        default = Why are we taking a picture of this?
     }
 }
 EXPERIMENT_DEFINITION
@@ -157,8 +157,8 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_16
-        default = #LOC_LTech_17
+        default = Why are we taking a picture of this?
+        default = What a great place to land an aircraft.
     }
 }
 EXPERIMENT_DEFINITION
@@ -175,11 +175,11 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_18
-        default = #LOC_LTech_19
-        default = #LOC_LTech_20
-        default = #LOC_LTech_21
-        default = #LOC_LTech_22
+        default = I wonder where this came from?
+        default = I'm not saying it were humans, but it were humans!
+        default = Eventually we should check out the propulsion system on that.
+        default = Think it has cup holders?
+        default = Where are the boosters?!?! Maybe that's why it crashed.
     }
 }
 EXPERIMENT_DEFINITION
@@ -196,11 +196,11 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_18
-        default = #LOC_LTech_19
-        default = #LOC_LTech_20
-        default = #LOC_LTech_21
-        default = #LOC_LTech_22
+        default = I wonder where this came from?
+        default = I'm not saying it were humans, but it were humans!
+        default = Eventually we should check out the propulsion system on that.
+        default = Think it has cup holders?
+        default = Where are the boosters?!?! Maybe that's why it crashed.
     }
 }
 EXPERIMENT_DEFINITION
@@ -217,7 +217,7 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_23
+        default = This must be important!
     }
 }
 EXPERIMENT_DEFINITION
@@ -234,10 +234,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_24
-        default = #LOC_LTech_25
-        default = #LOC_LTech_26
-        default = #LOC_LTech_27
+        default = It's a picture of a rock arch... Interesting.
+        default = Such arch would be a great way to test our spacecraft, if only it wasn't so hard to get to.
+        default = One wonders if the arch formed naturally, or if something put that hole there.
+        default = What a good place to put a base.
     }
 }
 EXPERIMENT_DEFINITION
@@ -254,10 +254,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_24
-        default = #LOC_LTech_25
-        default = #LOC_LTech_26
-        default = #LOC_LTech_27
+        default = It's a picture of a rock arch... Interesting.
+        default = Such arch would be a great way to test our spacecraft, if only it wasn't so hard to get to.
+        default = One wonders if the arch formed naturally, or if something put that hole there.
+        default = What a good place to put a base.
     }
 }
 EXPERIMENT_DEFINITION
@@ -274,10 +274,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_24
-        default = #LOC_LTech_25
-        default = #LOC_LTech_26
-        default = #LOC_LTech_27
+        default = It's a picture of a rock arch... Interesting.
+        default = Such arch would be a great way to test our spacecraft, if only it wasn't so hard to get to.
+        default = One wonders if the arch formed naturally, or if something put that hole there.
+        default = What a good place to put a base.
     }
 }
 EXPERIMENT_DEFINITION
@@ -294,10 +294,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_28
-        default = #LOC_LTech_29
-        default = #LOC_LTech_30
-        default = #LOC_LTech_31
+        default = This picture is amazing!
+        default = Were gonna use this photo to get more recruits to send into space.
+        default = Pictures like this are why we stick cameras on our spacecrafts.
+        default = Using this data we can plot out future spacecraft for science!
     }
 }
 EXPERIMENT_DEFINITION
@@ -314,7 +314,7 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_32
+        default = How did you get this? Must be a error!
     }
 }
 
@@ -334,10 +334,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -354,10 +354,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -374,10 +374,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -394,10 +394,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -414,10 +414,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -434,10 +434,10 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }
 EXPERIMENT_DEFINITION
@@ -454,9 +454,9 @@ EXPERIMENT_DEFINITION
 
     RESULTS
     {
-        default = #LOC_LTech_33
-        default = #LOC_LTech_34
-        default = #LOC_LTech_35
-        default = #LOC_LTech_36
+        default = A giant black slab? What is this?
+        default = There appears to be engravings on it, what could it mean?
+        default = It appears to be made of a unknown material.
+        default = Who or what put this here? Interesting.
     }
 }

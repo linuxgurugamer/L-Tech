@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -51,7 +51,7 @@ namespace LtScience.Modules
         public float picDataVal = 1f;
 
         [KSPField]
-        public string specialExperimentName = "photo-";
+        public string specialExperimentName = Localizer.Format("#LOC_lTech_64");
 
         //[KSPField]
         //public string specialExperimentTitle = "#Anon#";
@@ -88,11 +88,12 @@ namespace LtScience.Modules
 
         void Start()
         {
-            hasHullCameraVDS = SpaceTuxUtility.HasMod.hasMod("HullCamera");
-            Log.Info("hasHullCameraVDS: " + hasHullCameraVDS);
-            folder = KSPUtil.ApplicationRootPath + "Screenshots/LTech/";
-            Log.Info("folder: " + folder);
+            hasHullCameraVDS = SpaceTuxUtility.HasMod.hasMod(Localizer.Format("#LOC_lTech_65"));
+            Log.Info(Localizer.Format("#LOC_lTech_66") + hasHullCameraVDS);
+            folder = KSPUtil.ApplicationRootPath + Localizer.Format("#LOC_lTech_67");
+            Log.Info(Localizer.Format("#LOC_lTech_68") + folder);
         }
+
         private static void SaveMainCamera()
         {
             _origParent = _cam.transform.parent;
@@ -185,8 +186,8 @@ namespace LtScience.Modules
 
         private void DoExperiment()
         {
-            string expId = "Space";
-            string expName = "Picture";
+            string expId = Localizer.Format("#LOC_lTech_69");
+            string expName = Localizer.Format("#LOC_lTech_70");
             float expValue = picScienceVal;
             float expData = picDataVal;
 
@@ -217,7 +218,7 @@ namespace LtScience.Modules
 
         private void BeginPic()
         {
-            if (usesFilm && part.RequestResource("CameraFilm", 1f, ResourceFlowMode.NO_FLOW) < 1)
+            if (usesFilm && part.RequestResource(Localizer.Format("#LOC_lTech_71"), 1f, ResourceFlowMode.NO_FLOW) < 1)
             {
                 Utils.DisplayScreenMsg(Localizer.Format("#autoLOC_LTech_Hullcam_005"));
                 return;
@@ -374,9 +375,9 @@ namespace LtScience.Modules
                 if (ltCamActive)
                     LeaveCamera();
 
-                Events["ActivateCameraEvent"].guiActive = false;
-                Events["DeployExperiment"].guiActive = false;
-                Events["DetectAnomaliesEvent"].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_72")].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_73")].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_74")].guiActive = false;
                 ltCamActive = false;
                 CleanUp();
                 return;
@@ -387,7 +388,7 @@ namespace LtScience.Modules
 
 
             Events["ActivateCameraEvent"].guiName = ltCamActive ? Localizer.Format("#autoLOC_LTech_Hullcam_009") : Localizer.Format("#autoLOC_LTech_Hullcam_006");
-            Events["DeployExperiment"].guiActive = ltCamActive;
+            Events[Localizer.Format("#LOC_lTech_75")].guiActive = ltCamActive;
 
             if (!ltCamActive)
                 return;
@@ -432,9 +433,9 @@ namespace LtScience.Modules
 
             if (part.State == PartStates.DEAD)
             {
-                Events["ActivateCameraEvent"].guiActive = false;
-                Events["DeployExperiment"].guiActive = false;
-                Events["DetectAnomaliesEvent"].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_76")].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_77")].guiActive = false;
+                Events[Localizer.Format("#LOC_lTech_78")].guiActive = false;
             }
 
             base.OnStart(state);

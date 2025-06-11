@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -70,7 +70,7 @@ namespace LtScience.Windows
             GameEvents.onShowUI.Add(OnShowUI);
             GameEvents.onGamePause.Add(OnHideUI);
             GameEvents.onGameUnpause.Add(OnShowUI);
-            winID = WindowHelper.NextWindowId("SkylabExperiment");
+            winID = WindowHelper.NextWindowId(Localizer.Format("#LOC_lTech_230"));
 
             //if (exitWarpWhenDone == null)
             //    exitWarpWhenDone = HighLogic.CurrentGame.Parameters.CustomParams<LTech_1>().exitWarpWhenDone;
@@ -101,7 +101,7 @@ namespace LtScience.Windows
             try
             {
                 Rect rect = new Rect(position.width - 20, 4, 16, 16);
-                _label = "x";
+                _label = Localizer.Format("#LOC_lTech_231");
                 _tooltip = Localizer.Format("#autoLOC_LTech_Skylab_tt_001");
                 _guiLabel = new GUIContent(_label, _tooltip);
                 if (GUI.Button(rect, _guiLabel))
@@ -141,7 +141,7 @@ namespace LtScience.Windows
             try
             {
                 ExperimentSituations vesselSit = ScienceUtil.GetExperimentSituation(FlightGlobals.ActiveVessel);
-                string result = "";
+                string result = Localizer.Format("#LOC_lTech_232");
                 switch (vesselSit)
                 {
                     case ExperimentSituations.InSpaceHigh:
@@ -151,8 +151,8 @@ namespace LtScience.Windows
                         result = Localizer.Format("In space near <<1>>", FlightGlobals.ActiveVessel.mainBody.displayName);
                         break;
                 }
-                GUILayout.Label("Situation: " + result);
-                exitWarpWhenDone = GUILayout.Toggle((bool)exitWarpWhenDone, "Stop Warp when completed");
+                GUILayout.Label(Localizer.Format("#LOC_lTech_233") + result);
+                exitWarpWhenDone = GUILayout.Toggle((bool)exitWarpWhenDone, Localizer.Format("#LOC_lTech_234"));
 
                 GUILayout.Space(height);
                 foreach (Experiment e in Addon.experiments.Values)
@@ -170,13 +170,13 @@ namespace LtScience.Windows
                             if (percent < 100f)
                             {
                                 if (clickToDel)
-                                    _guiLabel = new GUIContent("Click to Cancel: " + e.label + " - " + percent.ToString("F2") + " % completed", e.tooltip);
+                                    _guiLabel = new GUIContent(Localizer.Format("#LOC_lTech_235") + e.label + Localizer.Format("#LOC_lTech_236") + percent.ToString(Localizer.Format("#LOC_lTech_237")) + Localizer.Format("#LOC_lTech_238"), e.tooltip);
                                 else
-                                    _guiLabel = new GUIContent(e.label + " - " + percent.ToString("F2") + " % completed", e.tooltip);
+                                    _guiLabel = new GUIContent(e.label + Localizer.Format("#LOC_lTech_239") + percent.ToString(Localizer.Format("#LOC_lTech_240")) + Localizer.Format("#LOC_lTech_241"), e.tooltip);
                             }
                             else
                             {
-                                _guiLabel = new GUIContent(e.label + " - Completed, Click to Finalize", e.tooltip);
+                                _guiLabel = new GUIContent(e.label + Localizer.Format("#LOC_lTech_242"), e.tooltip);
                             }
                             GUI.enabled = true;
                         }
@@ -203,11 +203,11 @@ namespace LtScience.Windows
 #if false
 
                                     float maxScience, availScience;
-                        Debug.Log("WindowSkylab, subject: " + subject.id);
-                        Debug.Log("key1: " + key1);
-                        Debug.Log("WindowSkylab, checkExperiment: " + 
-                            checkExperiment(e.name, experiment.id, vesselSit, FlightGlobals.ActiveVessel.mainBody, "", out maxScience, out availScience));
-                        Debug.Log("maxScience: " + maxScience + ", availScience: " + availScience);
+                        Debug.Log(Localizer.Format("#LOC_lTech_243") + subject.id);
+                        Debug.Log(Localizer.Format("#LOC_lTech_244") + key1);
+                        Debug.Log(Localizer.Format("#LOC_lTech_245") + 
+                            checkExperiment(e.name, experiment.id, vesselSit, FlightGlobals.ActiveVessel.mainBody, Localizer.Format("#LOC_lTech_246"), out maxScience, out availScience));
+                        Debug.Log(Localizer.Format("#LOC_lTech_247") + maxScience + Localizer.Format("#LOC_lTech_248") + availScience);
 #endif
 
                     }

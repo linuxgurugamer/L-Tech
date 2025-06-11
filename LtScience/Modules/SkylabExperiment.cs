@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -70,10 +70,10 @@ namespace LtScience.Modules
         }
         void Init()
         {
-            name = "";
-            label = "";
-            tooltip = "";
-            neededResourceName = "";
+            name = Localizer.Format("#LOC_lTech_80");
+            label = Localizer.Format("#LOC_lTech_81");
+            tooltip = Localizer.Format("#LOC_lTech_82");
+            neededResourceName = Localizer.Format("#LOC_lTech_83");
         }
         internal Experiment(string id)
         {
@@ -84,19 +84,19 @@ namespace LtScience.Modules
         {
             var experiment = new Experiment(id);
 
-            node.TryGetValue("label", ref experiment.label);
-            node.TryGetValue("tooltip", ref experiment.tooltip);
-            node.TryGetValue("resourceUsed", ref experiment.neededResourceName);
-            node.TryGetValue("resourceAmtRequired", ref experiment.resourceAmtRequired);
-            node.TryGetValue("xmitDataScalar", ref experiment.xmitDataScalar);
-            node.TryGetValue("resourceUsageRate", ref experiment.resourceUsageRate);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_84"), ref experiment.label);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_85"), ref experiment.tooltip);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_86"), ref experiment.neededResourceName);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_87"), ref experiment.resourceAmtRequired);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_88"), ref experiment.xmitDataScalar);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_89"), ref experiment.resourceUsageRate);
 #if false
-            Log.Info("Experiment.Load, id: " + experiment.name +
-                ", label: " + experiment.label +
-                ", tooltip: " + experiment.tooltip +
-                ", neededResourceName: " + experiment.neededResourceName +
-                ", resourceAmtRequired: " + experiment.resourceAmtRequired +
-                ", resourceUsageRate: " + resourceUsageRate);
+            Log.Info(Localizer.Format("#LOC_lTech_90") + experiment.name +
+                Localizer.Format("#LOC_lTech_91") + experiment.label +
+                Localizer.Format("#LOC_lTech_92") + experiment.tooltip +
+                Localizer.Format("#LOC_lTech_93") + experiment.neededResourceName +
+                Localizer.Format("#LOC_lTech_94") + experiment.resourceAmtRequired +
+                Localizer.Format("#LOC_lTech_95") + resourceUsageRate);
 #endif
             return experiment;
         }
@@ -135,11 +135,11 @@ namespace LtScience.Modules
         protected internal ExpStatus() // internal use only
         {
 
-            expId = "";
-            key = "";
-            bodyName = "";
-            reqResource = "";
-            biome = "";
+            expId = Localizer.Format("#LOC_lTech_96");
+            key = Localizer.Format("#LOC_lTech_97");
+            bodyName = Localizer.Format("#LOC_lTech_98");
+            reqResource = Localizer.Format("#LOC_lTech_99");
+            biome = Localizer.Format("#LOC_lTech_100");
             this.processedResource = 0;
             active = false;
         }
@@ -154,16 +154,16 @@ namespace LtScience.Modules
         {
             var expStatus = new ExpStatus();
 
-            node.TryGetValue("expId", ref expStatus.expId);
-            node.TryGetValue("key", ref expStatus.key);
-            node.TryGetValue("bodyName", ref expStatus.bodyName);
-            node.TryGetEnum<ExperimentSituations>("vesselSit", ref expStatus.vesselSit, 0);
-            node.TryGetValue("biome", ref expStatus.biome);
-            node.TryGetValue("processedResource", ref expStatus.processedResource);
-            node.TryGetValue("reqResource", ref expStatus.reqResource);
-            node.TryGetValue("reqAmount", ref expStatus.reqAmount);
-            node.TryGetValue("active", ref expStatus.active);
-            node.TryGetValue("lastTimeUpdated", ref expStatus.lastTimeUpdated);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_101"), ref expStatus.expId);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_102"), ref expStatus.key);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_103"), ref expStatus.bodyName);
+            node.TryGetEnum<ExperimentSituations>(Localizer.Format("#LOC_lTech_104"), ref expStatus.vesselSit, 0);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_105"), ref expStatus.biome);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_106"), ref expStatus.processedResource);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_107"), ref expStatus.reqResource);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_108"), ref expStatus.reqAmount);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_109"), ref expStatus.active);
+            node.TryGetValue(Localizer.Format("#LOC_lTech_110"), ref expStatus.lastTimeUpdated);
             if (expStatus.active)
             {
                 ModuleScienceExperiment exp = new ModuleScienceExperiment();
@@ -175,25 +175,25 @@ namespace LtScience.Modules
                     instance.SetUpActiveExperiment(expStatus.expId, expStatus.biome, exp, expStatus.reqResource, expStatus.processedResource);
             }
 #if false
-            Log.Info("ExpStatus.Load, expId: " + expStatus.expId + ", key: " + expStatus.key + ", bodyName: " + expStatus.bodyName +
-                ", vesselSit: " + expStatus.vesselSit + ", biome: " + expStatus.biome + ", processedResource: " + expStatus.processedResource +
-                ", reqAmount: " + expStatus.reqAmount + ", active: " + expStatus.active);
+            Log.Info(Localizer.Format("#LOC_lTech_111") + expStatus.expId + Localizer.Format("#LOC_lTech_112") + expStatus.key + Localizer.Format("#LOC_lTech_113") + expStatus.bodyName +
+                Localizer.Format("#LOC_lTech_114") + expStatus.vesselSit + Localizer.Format("#LOC_lTech_115") + expStatus.biome + Localizer.Format("#LOC_lTech_116") + expStatus.processedResource +
+                Localizer.Format("#LOC_lTech_117") + expStatus.reqAmount + Localizer.Format("#LOC_lTech_118") + expStatus.active);
 #endif
             return expStatus;
         }
 
         public void Save(ConfigNode node)
         {
-            node.SetValue("expId", expId, true);
-            node.SetValue("key", key, true);
-            node.SetValue("bodyName", bodyName, true);
-            node.SetValue("vesselSit", vesselSit.ToString(), true);
-            node.SetValue("biome", biome, true);
-            node.SetValue("processedResource", processedResource, true);
-            node.SetValue("reqResource", reqResource, true);
-            node.SetValue("reqAmount", reqAmount, true);
-            node.SetValue("active", active, true);
-            node.SetValue("lastTimeUpdated", lastTimeUpdated, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_119"), expId, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_120"), key, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_121"), bodyName, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_122"), vesselSit.ToString(), true);
+            node.SetValue(Localizer.Format("#LOC_lTech_123"), biome, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_124"), processedResource, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_125"), reqResource, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_126"), reqAmount, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_127"), active, true);
+            node.SetValue(Localizer.Format("#LOC_lTech_128"), lastTimeUpdated, true);
         }
     }
 
@@ -241,7 +241,7 @@ namespace LtScience.Modules
                 }
             }
             else
-                expSit = "";
+                expSit = Localizer.Format("#LOC_lTech_129");
 
             if (e_biome > 0)
             {
@@ -251,10 +251,10 @@ namespace LtScience.Modules
                 }
             }
             else
-                biomeSit = "";
+                biomeSit = Localizer.Format("#LOC_lTech_130");
 
 
-            return expid + ":" + bodyName + ":" + expSit.ToString() + ":" + biomeSit;
+            return expid + Localizer.Format("#LOC_lTech_131") + bodyName + Localizer.Format("#LOC_lTech_132") + expSit.ToString() + Localizer.Format("#LOC_lTech_133") + biomeSit;
 
         }
         public string Key
@@ -347,7 +347,7 @@ namespace LtScience.Modules
 
         public override void OnLoad(ConfigNode node)
         {
-            Log.Info("OnLoad");
+            Log.Info(Localizer.Format("#LOC_lTech_134"));
             _storedData.Clear();
             expStatuses.Clear();
 
@@ -371,16 +371,16 @@ namespace LtScience.Modules
             }
 
 
-            Log.Info("SkylabExperiments, found: " + experiments.Count);
+            Log.Info(Localizer.Format("#LOC_lTech_135") + experiments.Count);
         }
 
         public void Start()
         {
             if (HighLogic.LoadedSceneIsFlight)
             {
-                Log.Info("SkylabExperiment.OnStart");
+                Log.Info(Localizer.Format("#LOC_lTech_136"));
                 skylabcoreModule = part.FindModuleImplementing<SkylabCore>();
-                StartCoroutine("SlowUpdate");
+                StartCoroutine(Localizer.Format("#LOC_lTech_137"));
             }
         }
         IEnumerator SlowUpdate()
@@ -394,8 +394,8 @@ namespace LtScience.Modules
 
         public void OnDestroy()
         {
-            Log.Info("SkylabExperiment.OnDestroy");
-            StopCoroutine("SlowUpdate");
+            Log.Info(Localizer.Format("#LOC_lTech_138"));
+            StopCoroutine(Localizer.Format("#LOC_lTech_139"));
             GameEvents.onGamePause.Remove(OnPause);
             GameEvents.onGameUnpause.Remove(OnUnpause);
         }
@@ -403,10 +403,10 @@ namespace LtScience.Modules
         private void UpdateUI()
         {
             //Events["OpenGui"].active = true;
-            Events["EvaCollect"].active = _storedData.Count > 0;
-            Events["ReviewDataEvent"].active = _storedData.Count > 0;
+            Events[Localizer.Format("#LOC_lTech_140")].active = _storedData.Count > 0;
+            Events[Localizer.Format("#LOC_lTech_141")].active = _storedData.Count > 0;
 
-            Events["OpenGui"].guiActive =
+            Events[Localizer.Format("#LOC_lTech_142")].guiActive =
                 (skylabcoreModule != null &&
                  part.protoModuleCrew.Count >= skylabcoreModule.minimumCrew &&
                  !Utils.CheckBoring(vessel) &&
@@ -442,11 +442,11 @@ namespace LtScience.Modules
             {
                 windowSkylab = gameObject.AddComponent<WindowSkylab>();
                 windowSkylab.LabExp = this;
-                Events["OpenGui"].guiName = "#autoLOC_LTech_Experiment_008";
+                Events[Localizer.Format("#LOC_lTech_143")].guiName = Localizer.Format("#LOC_lTech_144");
             }
             else
             {
-                Events["OpenGui"].guiName = "#autoLOC_LTech_Experiment_001";
+                Events[Localizer.Format("#LOC_lTech_145")].guiName = Localizer.Format("#LOC_lTech_146");
                 Destroy(windowSkylab);
                 windowSkylab = null;
 
@@ -564,15 +564,15 @@ namespace LtScience.Modules
                 }
                 else
                 {
-                    Log.Info("Situation changed");
-                    Utils.DisplayScreenMsg("Vessel Situation Changed, Experiment Paused");
+                    Log.Info(Localizer.Format("#LOC_lTech_147"));
+                    Utils.DisplayScreenMsg(Localizer.Format("#LOC_lTech_148"));
                 } // need to decide what to do if something changed
                 lastUpdateTime = curTime;
 
             }
             else
                 if (experimentStarted)
-                    Log.Info("FixedUpdate, activeExperiment is null");
+                    Log.Info(Localizer.Format("#LOC_lTech_149"));
 
         }
 
@@ -582,7 +582,7 @@ namespace LtScience.Modules
             TimeWarp.fetch.CancelAutoWarp();
             while (w.current_rate_index > 0)
             {
-                Log.Info("Reducing Warp");
+                Log.Info(Localizer.Format("#LOC_lTech_150"));
                 //Make sure we cancel autowarp if its engaged
                 TimeWarp.SetRate(w.current_rate_index - 1, true);
                 yield return new WaitForSecondsRealtime(0.25f);
@@ -594,7 +594,7 @@ namespace LtScience.Modules
 
         internal void DoScience(string expId)
         {
-            string step = "Start";
+            string step = Localizer.Format("#LOC_lTech_151");
 
             string reqResource = experiments[expId].neededResourceName;
             float reqAmount = 1;
@@ -607,14 +607,14 @@ namespace LtScience.Modules
                 ModuleScienceExperiment exp = new ModuleScienceExperiment();
                 if (experiments[expId].xmitDataScalar > 0)
                     exp.xmitDataScalar = experiments[expId].xmitDataScalar;
-                Log.Info("DoScience, expId: " + expId + ", xmitDataScalar: " + exp.xmitDataScalar);
+                Log.Info(Localizer.Format("#LOC_lTech_152") + expId + Localizer.Format("#LOC_lTech_153") + exp.xmitDataScalar);
 
                 // Checks
-                step = "Check Boring";
+                step = Localizer.Format("#LOC_lTech_154");
                 if (Utils.CheckBoring(vessel, true))
                     return;
 
-                step = "Check CanRun";
+                step = Localizer.Format("#LOC_lTech_155");
                 if (!Utils.CanRunExperiment(vessel, expId, ref msg))
                 {
                     Utils.DisplayScreenMsg(Localizer.Format("#autoLOC_LTech_Experiment_002", msg));
@@ -622,10 +622,10 @@ namespace LtScience.Modules
                 }
 
 #if false
-                step = "Check Insight";
-                if (Utils.ResourceAvailable(prt, "Insight") < reqInsight)
+                step = Localizer.Format("#LOC_lTech_156");
+                if (Utils.ResourceAvailable(prt, Localizer.Format("#LOC_lTech_157")) < reqInsight)
                 {
-                    double current = Utils.ResourceAvailable(prt, "Insight");
+                    double current = Utils.ResourceAvailable(prt, Localizer.Format("#LOC_lTech_158"));
                     double needed = reqInsight - current;
 
                     Utils.DisplayScreenMsg(Localizer.Format("#autoLOC_LTech_Experiment_003", (int)needed));
@@ -633,7 +633,7 @@ namespace LtScience.Modules
                 }
 #endif
 
-                step = "Check Resource";
+                step = Localizer.Format("#LOC_lTech_159");
                 if (Utils.ResourceAvailable(prt, reqResource) < reqAmount)
                 {
                     double current = Utils.ResourceAvailable(prt, reqResource);
@@ -644,7 +644,7 @@ namespace LtScience.Modules
                 }
 
                 // Experiment
-                step = "Get Experiment";
+                step = Localizer.Format("#LOC_lTech_160");
                 exp.experimentID = expId;
                 ScienceExperiment labExp = ResearchAndDevelopment.GetExperiment(exp.experimentID);
                 if (labExp == null)
@@ -654,11 +654,11 @@ namespace LtScience.Modules
                     return;
                 }
 
-                step = "Get Situation";
+                step = Localizer.Format("#LOC_lTech_161");
                 ExperimentSituations vesselSit = ScienceUtil.GetExperimentSituation(vessel);
                 if (labExp.IsAvailableWhile(vesselSit, vessel.mainBody))
                 {
-                    step = "Get Biome";
+                    step = Localizer.Format("#LOC_lTech_162");
                     string biome, displayBiome;
                     if (vessel.landedAt != string.Empty)
                     {
@@ -671,10 +671,10 @@ namespace LtScience.Modules
                         displayBiome = ScienceUtil.GetBiomedisplayName(vessel.mainBody, biome);
                     }
 
-                    Log.Info("DoScience, expId: " + expId +
-                        "body: " + vessel.mainBody.bodyName +
-                        ", ScienceUtil.GetExperimentSituation: " + ScienceUtil.GetExperimentSituation(vessel) +
-                        ", biome: " + biome);
+                    Log.Info(Localizer.Format("#LOC_lTech_163") + expId +
+                        Localizer.Format("#LOC_lTech_164") + vessel.mainBody.bodyName +
+                        Localizer.Format("#LOC_lTech_165") + ScienceUtil.GetExperimentSituation(vessel) +
+                        Localizer.Format("#LOC_lTech_166") + biome);
 
                     SetUpActiveExperiment(expId, biome, exp, reqResource);
 #if false
@@ -697,7 +697,7 @@ namespace LtScience.Modules
                     Utils.DisplayScreenMsg(Localizer.Format("#autoLOC_LTech_Experiment_007", vesselSit.displayDescription()));
                 }
 
-                step = "End";
+                step = Localizer.Format("#LOC_lTech_167");
             }
             catch (Exception ex)
             {
@@ -726,12 +726,12 @@ namespace LtScience.Modules
 
         internal void FinalizeExperiment()
         {
-            Log.Info("FinalizeExperiment");
+            Log.Info(Localizer.Format("#LOC_lTech_168"));
 
             ScienceExperiment labExp = ResearchAndDevelopment.GetExperiment(activeExperiment.activeExpid);
 
 
-            string displayBiome = "";
+            string displayBiome = Localizer.Format("#LOC_lTech_169");
             if (vessel.landedAt != string.Empty)
             {
                 activeExperiment.biomeSit = Vessel.GetLandedAtString(vessel.landedAt);
@@ -742,18 +742,18 @@ namespace LtScience.Modules
                 activeExperiment.biomeSit = ScienceUtil.GetExperimentBiome(vessel.mainBody, vessel.latitude, vessel.longitude);
                 displayBiome = ScienceUtil.GetBiomedisplayName(vessel.mainBody, activeExperiment.biomeSit);
 
-                activeExperiment.biomeSit = "";
-                displayBiome = "";
+                activeExperiment.biomeSit = Localizer.Format("#LOC_lTech_170");
+                displayBiome = Localizer.Format("#LOC_lTech_171");
             }
 
             ModuleScienceExperiment exp = activeExperiment.mse;
 
 #if DEBUG
-            var step = "Get Subject";
+            var step = Localizer.Format("#LOC_lTech_172");
 #endif
             ScienceSubject labSub = ResearchAndDevelopment.GetExperimentSubject(labExp, activeExperiment.expSit, vessel.mainBody, activeExperiment.biomeSit, displayBiome);
             //labSub.title = $"{labExp.experimentTitle}";
-            if (activeExperiment.biomeSit != "")
+            if (activeExperiment.biomeSit != Localizer.Format("#LOC_lTech_173"))
                 labSub.title = ScienceUtil.GenerateScienceSubjectTitle(labExp, activeExperiment.expSit, vessel.mainBody, activeExperiment.biomeSit, displayBiome);
             else
                 labSub.title = ScienceUtil.GenerateScienceSubjectTitle(labExp, activeExperiment.expSit, vessel.mainBody);
@@ -763,19 +763,19 @@ namespace LtScience.Modules
             labSub.scienceCap = labExp.scienceCap * labSub.subjectValue;
 
 #if DEBUG
-            step = "Calculate Points";
+            step = Localizer.Format("#LOC_lTech_174");
 #endif
             float sciencePoints = labExp.baseValue * labExp.dataScale;
 
             ScienceData labData = new ScienceData(sciencePoints, exp.xmitDataScalar, 0, labSub.id, labSub.title, false, vessel.rootPart.flightID);
 
 #if DEBUG
-            step = "Add Experiment";
+            step = Localizer.Format("#LOC_lTech_175");
 #endif
             _storedData.Add(labData);
 
 #if DEBUG
-            step = "Show Dialog";
+            step = Localizer.Format("#LOC_lTech_176");
 #endif
             Utils.DisplayScreenMsg(Localizer.Format("#autoLOC_238419", vessel.rootPart.partInfo.title, labData.dataAmount, labSub.title));
             ReviewDataItem(labData);
@@ -790,7 +790,7 @@ namespace LtScience.Modules
 
         private void ShowResultDialog(ScienceData data)
         {
-            Log.Info("ShowResultDialog");
+            Log.Info(Localizer.Format("#LOC_lTech_177"));
             ScienceLabSearch labSearch = new ScienceLabSearch(FlightGlobals.ActiveVessel, data);
 
             _expDialog = ExperimentsResultDialog.DisplayResult(new ExperimentResultDialogPage(
@@ -818,14 +818,14 @@ namespace LtScience.Modules
         {
             if (_storedData.Count == 0)
                 return;
-            Log.Info("ReviewData");
+            Log.Info(Localizer.Format("#LOC_lTech_178"));
             foreach (ScienceData data in _storedData)
                 ReviewDataItem(data);
         }
 
         public void ReviewDataItem(ScienceData data)
         {
-            Log.Info("ReviewDataItem");
+            Log.Info(Localizer.Format("#LOC_lTech_179"));
             ShowResultDialog(data);
         }
 

@@ -8,6 +8,7 @@
  * 
  * This file has been modified extensively and is released under the same license.
  */
+using KSP.Localization;
 using System;
 using System.IO;
 using System.Linq;
@@ -21,19 +22,19 @@ namespace LtScience
     {
         private void Start()
         {
-            string v = "n/a";
+            string v = Localizer.Format("#LOC_lTech_36");
             AssemblyTitleAttribute attributes = (AssemblyTitleAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyTitleAttribute), false);
             string title = attributes?.Title;
             if (title == null)
             {
-                title = "TitleNotAvailable";
+                title = Localizer.Format("#LOC_lTech_37");
             }
             v = Assembly.GetExecutingAssembly().FullName;
             if (v == null)
             {
-                v = "VersionNotAvailable";
+                v = Localizer.Format("#LOC_lTech_38");
             }
-            Debug.Log("[" + title + "] Version " + v);
+            Debug.Log(Localizer.Format("#LOC_lTech_39") + title + Localizer.Format("#LOC_lTech_40") + v);
         }
     }
 
@@ -55,14 +56,14 @@ namespace LtScience
                 (
                     new Vector2(0.5f, 0.5f),
                     new Vector2(0.5f, 0.5f),
-                    "test",
-                    "Incorrect " + MODNAME + " Installation",
-                    MODNAME + " has been installed incorrectly and will not function properly. All files should be located in KSP/GameData/" + FOLDERNAME + ". Do not move any files from inside that folder.\n\nIncorrect path(s):\n" + String.Join("\n", badPaths.ToArray()),
-                    "OK",
+                    Localizer.Format("#LOC_lTech_41"),
+                    Localizer.Format("#LOC_lTech_42") + MODNAME + Localizer.Format("#LOC_lTech_43"),
+                    MODNAME + Localizer.Format("#LOC_lTech_44") + FOLDERNAME + Localizer.Format("#LOC_lTech_45") + String.Join(Localizer.Format("#LOC_lTech_46"), badPaths.ToArray()),
+                    Localizer.Format("#LOC_lTech_47"),
                     false,
                     HighLogic.UISkin
                 );
-                Debug.Log("Incorrect " + MODNAME + " Installation: " + MODNAME + " has been installed incorrectly and will not function properly. All files should be located in KSP/GameData/" + EXPECTEDPATH + ". Do not move any files from inside that folder.\n\nIncorrect path(s):\n" + String.Join("\n", badPaths.ToArray())
+                Debug.Log(Localizer.Format("#LOC_lTech_48") + MODNAME + Localizer.Format("#LOC_lTech_49") + MODNAME + Localizer.Format("#LOC_lTech_50") + EXPECTEDPATH + Localizer.Format("#LOC_lTech_51") + String.Join(Localizer.Format("#LOC_lTech_52"), badPaths.ToArray())
 
                      );
 
@@ -89,8 +90,8 @@ namespace LtScience
             }
             catch (Exception ex)
             {
-                Debug.LogError("-ERROR- " + this.GetType().FullName + "[" + this.GetInstanceID().ToString("X") + "][" + Time.time.ToString("0.00") + "]: " +
-                   "Exception caught while cleaning up old files.\n" + ex.Message + "\n" + ex.StackTrace );
+                Debug.LogError(Localizer.Format("#LOC_lTech_53") + this.GetType().FullName + Localizer.Format("#LOC_lTech_54") + this.GetInstanceID().ToString(Localizer.Format("#LOC_lTech_55")) + Localizer.Format("#LOC_lTech_56") + Time.time.ToString(Localizer.Format("#LOC_lTech_57")) + Localizer.Format("#LOC_lTech_58") +
+                   Localizer.Format("#LOC_lTech_59") + ex.Message + Localizer.Format("#LOC_lTech_60") + ex.StackTrace );
 
             }
         }

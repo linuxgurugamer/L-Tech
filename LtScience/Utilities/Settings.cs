@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -14,6 +14,7 @@
  * See <https://opensource.org/licenses/MIT> for full details.
  */
 
+using KSP.Localization;
 using System.IO;
 using System.Reflection;
 using LtScience.Windows;
@@ -62,18 +63,18 @@ namespace LtScience.Utilities
 
             if (settings != null)
             {
-                ConfigNode windowsNode = settings.HasNode("LT_Windows") ? settings.GetNode("LT_Windows") : settings.AddNode("LT_Windows");
-                ConfigNode settingsNode = settings.HasNode("LT_Settings") ? settings.GetNode("LT_Settings") : settings.AddNode("LT_Settings");
+                ConfigNode windowsNode = settings.HasNode(Localizer.Format("#LOC_lTech_180")) ? settings.GetNode(Localizer.Format("#LOC_lTech_181")) : settings.AddNode(Localizer.Format("#LOC_lTech_182"));
+                ConfigNode settingsNode = settings.HasNode(Localizer.Format("#LOC_lTech_183")) ? settings.GetNode(Localizer.Format("#LOC_lTech_184")) : settings.AddNode(Localizer.Format("#LOC_lTech_185"));
 
                 // Load window positions
-                WindowSettings.position = GetRectangle(windowsNode, "SettingsPosition", WindowSettings.position);
+                WindowSettings.position = GetRectangle(windowsNode, Localizer.Format("#LOC_lTech_186"), WindowSettings.position);
                 //WindowSkylab.position = GetRectangle(windowsNode, "SkylabPosition", WindowSkylab.position);
 
                 // Load settings
-                resolution = settingsNode.HasValue("Resolution") ? float.Parse(settingsNode.GetValue("Resolution")) : resolution;
-                shuttertime = settingsNode.HasValue("Shuttertime") ? float.Parse(settingsNode.GetValue("Shuttertime")) : shuttertime;
+                resolution = settingsNode.HasValue(Localizer.Format("#LOC_lTech_187")) ? float.Parse(settingsNode.GetValue(Localizer.Format("#LOC_lTech_188"))) : resolution;
+                shuttertime = settingsNode.HasValue(Localizer.Format("#LOC_lTech_189")) ? float.Parse(settingsNode.GetValue(Localizer.Format("#LOC_lTech_190"))) : shuttertime;
 
-                hideUiOnScreenshot = settingsNode.HasValue("HideUIOnScreenshot") ? bool.Parse(settingsNode.GetValue("HideUIOnScreenshot")) : hideUiOnScreenshot;
+                hideUiOnScreenshot = settingsNode.HasValue(Localizer.Format("#LOC_lTech_191")) ? bool.Parse(settingsNode.GetValue(Localizer.Format("#LOC_lTech_192"))) : hideUiOnScreenshot;
 
                 // Set the loaded flag
                 loaded = true;
@@ -93,18 +94,18 @@ namespace LtScience.Utilities
                 if (settings == null)
                     settings = LoadSettingsFile();
 
-                ConfigNode windowsNode = settings.HasNode("LT_Windows") ? settings.GetNode("LT_Windows") : settings.AddNode("LT_Windows");
-                ConfigNode settingsNode = settings.HasNode("LT_Settings") ? settings.GetNode("LT_Settings") : settings.AddNode("LT_Settings");
+                ConfigNode windowsNode = settings.HasNode(Localizer.Format("#LOC_lTech_193")) ? settings.GetNode(Localizer.Format("#LOC_lTech_194")) : settings.AddNode(Localizer.Format("#LOC_lTech_195"));
+                ConfigNode settingsNode = settings.HasNode(Localizer.Format("#LOC_lTech_196")) ? settings.GetNode(Localizer.Format("#LOC_lTech_197")) : settings.AddNode(Localizer.Format("#LOC_lTech_198"));
 
                 // Save window positions
-                WriteRectangle(windowsNode, "SettingsPosition", WindowSettings.position);
+                WriteRectangle(windowsNode, Localizer.Format("#LOC_lTech_199"), WindowSettings.position);
                 //WriteRectangle(windowsNode, "SkylabPosition", WindowSkylab.position);
 
                 // Save settings
-                WriteValue(settingsNode, "Resolution", $"{resolution:0}");
-                WriteValue(settingsNode, "Shuttertime", $"{shuttertime:0.#}");
+                WriteValue(settingsNode, Localizer.Format("#LOC_lTech_200"), $"{resolution:0}");
+                WriteValue(settingsNode, Localizer.Format("#LOC_lTech_201"), $"{shuttertime:0.#}");
 
-                WriteValue(settingsNode, "HideUIOnScreenshot", hideUiOnScreenshot);
+                WriteValue(settingsNode, Localizer.Format("#LOC_lTech_202"), hideUiOnScreenshot);
 
                 if (!Directory.Exists(settingsPath))
                     Directory.CreateDirectory(settingsPath);
@@ -127,10 +128,10 @@ namespace LtScience.Utilities
             try
             {
                 ConfigNode rectNode = node.HasNode(name) ? node.GetNode(name) : node.AddNode(name);
-                thisRect.x = rectNode.HasValue("x") ? int.Parse(rectNode.GetValue("x")) : value.x;
-                thisRect.y = rectNode.HasValue("y") ? int.Parse(rectNode.GetValue("y")) : value.y;
-                thisRect.width = rectNode.HasValue("width") ? int.Parse(rectNode.GetValue("width")) : value.width;
-                thisRect.height = rectNode.HasValue("height") ? int.Parse(rectNode.GetValue("height")) : value.height;
+                thisRect.x = rectNode.HasValue(Localizer.Format("#LOC_lTech_203")) ? int.Parse(rectNode.GetValue(Localizer.Format("#LOC_lTech_204"))) : value.x;
+                thisRect.y = rectNode.HasValue(Localizer.Format("#LOC_lTech_205")) ? int.Parse(rectNode.GetValue(Localizer.Format("#LOC_lTech_206"))) : value.y;
+                thisRect.width = rectNode.HasValue(Localizer.Format("#LOC_lTech_207")) ? int.Parse(rectNode.GetValue(Localizer.Format("#LOC_lTech_208"))) : value.width;
+                thisRect.height = rectNode.HasValue(Localizer.Format("#LOC_lTech_209")) ? int.Parse(rectNode.GetValue(Localizer.Format("#LOC_lTech_210"))) : value.height;
             }
             catch
             {
@@ -143,10 +144,10 @@ namespace LtScience.Utilities
         private static void WriteRectangle(ConfigNode node, string name, Rect value)
         {
             ConfigNode rectNode = node.HasNode(name) ? node.GetNode(name) : node.AddNode(name);
-            WriteValue(rectNode, "x", (int)value.x);
-            WriteValue(rectNode, "y", (int)value.y);
-            WriteValue(rectNode, "width", (int)value.width);
-            WriteValue(rectNode, "height", (int)value.height);
+            WriteValue(rectNode, Localizer.Format("#LOC_lTech_211"), (int)value.x);
+            WriteValue(rectNode, Localizer.Format("#LOC_lTech_212"), (int)value.y);
+            WriteValue(rectNode, Localizer.Format("#LOC_lTech_213"), (int)value.width);
+            WriteValue(rectNode, Localizer.Format("#LOC_lTech_214"), (int)value.height);
         }
 
         private static void WriteValue(ConfigNode node, string name, object value)

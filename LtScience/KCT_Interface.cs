@@ -1,4 +1,5 @@
-﻿using System;
+using KSP.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace LtScience
 {
     public class KCT_Interface
     {
-        static public bool HasKCT {  get { return SpaceTuxUtility.HasMod.hasMod("KerbalConstructionTime"); } }
+        static public bool HasKCT {  get { return SpaceTuxUtility.HasMod.hasMod(Localizer.Format("#LOC_lTech_61")); } }
 
         static double KCTAdjustment()
         {
@@ -36,7 +37,7 @@ namespace LtScience
                     return KCTAdjustment();
             } catch (Exception ex)
              {
-                Debug.Log("L-Tech: KCT Error, msg: " + ex.Message);
+                Debug.Log(Localizer.Format("#LOC_lTech_62") + ex.Message);
                 return 1f; 
             }
             return 1f;

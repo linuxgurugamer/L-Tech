@@ -1,4 +1,5 @@
-﻿
+
+using KSP.Localization;
 using UnityEngine;
 using ToolbarControl_NS;
 using KSP_Log;
@@ -21,7 +22,7 @@ namespace LtScience
     {
         protected void Awake()
         {
-            Addon.Log = new KSP_Log.Log("L-Tech"
+            Addon.Log = new KSP_Log.Log(Localizer.Format("#LOC_lTech_63")
 #if DEBUG
                 , KSP_Log.Log.LEVEL.INFO
 #endif

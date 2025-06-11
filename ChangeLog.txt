@@ -1,5 +1,10 @@
 Changelog
 
+0.5.3
+	Added RealFuels/ModularFuelTanks support
+	Fixed typo in experiment result (KeringFlyingLowWater now KerbinFlyingLowWater)
+	Fully localized mod
+
 0.5.2.3
 	Thanks to @hebarusan for this:
 		Fix capitalization of Skylab

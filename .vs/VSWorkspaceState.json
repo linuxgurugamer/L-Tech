@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\GameData",
-    "\\GameData\\LTech",
-    "\\GameData\\LTech\\Parts",
-    "\\GameData\\LTech\\Parts\\Science",
-    "\\GameData\\LTech\\Parts\\Science\\Skylab",
-    "\\GameData\\LTech\\Resources",
-    "\\LtScience",
-    "\\LtScience\\Modules",
-    "\\LtScience\\Windows"
+    ""
   ],
-  "SelectedNode": "\\GameData\\LTech\\Resources\\Skylab_ScienceDefs.cfg",
+  "SelectedNode": "\\LtScience.sln",
   "PreviewInSolutionExplorer": false
 }

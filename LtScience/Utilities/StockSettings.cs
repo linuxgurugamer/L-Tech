@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using KSP.Localization;
+using System.Collections;
 using System.Reflection;
 
 namespace LtScience.Utilities
@@ -10,14 +11,14 @@ namespace LtScience.Utilities
     public class LTech_1 : GameParameters.CustomParameterNode
     {
         internal static LTech_1 fetch = null;
-        public override string Title { get { return ""; } }
+        public override string Title { get { return Localizer.Format("#LOC_lTech_215"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "L-Tech"; } }
-        public override string DisplaySection { get { return "L-Tech"; } }
+        public override string Section { get { return Localizer.Format("#LOC_lTech_216"); } }
+        public override string DisplaySection { get { return Localizer.Format("#LOC_lTech_217"); } }
         public override int SectionOrder { get { return 1; } }
         public override bool HasPresets { get { return true; } }
 
-
+        #region NO_LOCALIZATION
         [GameParameters.CustomParameterUI("Use Efficiency multiplier calcuated from KCT",
                   toolTip = "If both Research & Development are false, this will be set to false")]
         public bool useEfficiencyMultiplier = true;
@@ -30,7 +31,7 @@ namespace LtScience.Utilities
         [GameParameters.CustomParameterUI("Stop Warp when completed",
           toolTip = "If warp in progress when experiment is completed, safely stop the warp")]
         public bool exitWarpWhenDone = true;
-
+        #endregion
 
         public override void SetDifficultyPreset(GameParameters.Preset preset) { }
 
@@ -48,10 +49,10 @@ namespace LtScience.Utilities
 
     public class LTech_2 : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return ""; } }
+        public override string Title { get { return Localizer.Format("#LOC_lTech_218"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "L-Tech"; } }
-        public override string DisplaySection { get { return "L-Tech"; } }
+        public override string Section { get { return Localizer.Format("#LOC_lTech_219"); } }
+        public override string DisplaySection { get { return Localizer.Format("#LOC_lTech_220"); } }
         public override int SectionOrder { get { return 2; } }
         public override bool HasPresets { get { return true; } }
 
@@ -67,7 +68,8 @@ namespace LtScience.Utilities
 
         public float efficiencyMultiplierAdjustment = 1f;
         [GameParameters.CustomFloatParameterUI("Efficiency Multiplier Adjustment (%)", minValue = 10f, maxValue = 100.0f,
-                 toolTip = "Only used with KCT, adjusts the effiency multipler which is based on the research and/or Development.  The lower it is, the longer experiments will take to be completed")]
+                 toolTip = "Only used with KCT, adjusts the efficiency multipler which is based on the research and/or Development.  The lower it is, the longer experiments will take to be completed")]
+
         public float CostAdj
         {
             get { return efficiencyMultiplierAdjustment * 100; }
@@ -80,7 +82,7 @@ namespace LtScience.Utilities
         public override bool Enabled(MemberInfo member, GameParameters parameters) { return true; }
         public override bool Interactible(MemberInfo member, GameParameters parameters)
         {
-            if (member.Name == "useKCTResearch" || member.Name == "useKCTDevelopment" || member.Name == "CostAdj")
+            if (member.Name == Localizer.Format("#LOC_lTech_221") || member.Name == Localizer.Format("#LOC_lTech_222") || member.Name == Localizer.Format("#LOC_lTech_223"))
             {
                 return LTech_1.fetch.useEfficiencyMultiplier;
             }

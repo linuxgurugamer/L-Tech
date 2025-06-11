@@ -1,4 +1,4 @@
-﻿/*
+/*
  * L-Tech Scientific Industries Continued
  * Copyright © 2015-2018, Arne Peirs (Olympic1)
  * Copyright © 2016-2018, Jonathan Bayer (linuxgurugamer)
@@ -14,6 +14,7 @@
  * See <https://opensource.org/licenses/MIT> for full details.
  */
 
+using KSP.Localization;
 using System;
 using System.Collections;
 using KSP.UI.Screens;
@@ -56,7 +57,7 @@ namespace LtScience
         // Makes instance available via reflection
         public static Addon Instance;
 
-        public static KSP_Log.Log Log = new KSP_Log.Log("L-Tech"
+        public static KSP_Log.Log Log = new KSP_Log.Log(Localizer.Format("#LOC_lTech_1")
 #if DEBUG
                 , KSP_Log.Log.LEVEL.DETAIL
 #endif
@@ -93,8 +94,8 @@ namespace LtScience
                 // Handle toolbars
                 CreateToolbar();
 
-                settingsID = WindowHelper.NextWindowId("SkylabSettings");
-                windowSkylabID = WindowHelper.NextWindowId("WinSkylab");
+                settingsID = WindowHelper.NextWindowId(Localizer.Format("#LOC_lTech_2"));
+                windowSkylabID = WindowHelper.NextWindowId(Localizer.Format("#LOC_lTech_3"));
             }
             catch (Exception ex)
             {
@@ -109,7 +110,7 @@ namespace LtScience
                 // Reset frame error latch if set
                 //if (FrameErrTripped)
                 FrameErrTripped = false;
-                Log.Info("Addon.Start");
+                Log.Info(Localizer.Format("#LOC_lTech_4"));
                 // Instantiate event handlers
                 GameEvents.onGameSceneSwitchRequested.Add(OnGameSceneSwitchRequested);
 
@@ -126,7 +127,7 @@ namespace LtScience
 
                 FindVesselsWithSkylab();
 
-                StartCoroutine("SlowUpdate");
+                StartCoroutine(Localizer.Format("#LOC_lTech_5"));
             }
             catch (Exception ex)
             {
@@ -138,23 +139,23 @@ namespace LtScience
 
         void InitExperiments()
         {
-            Log.Info("Addon.InitExperiment, count: " + experiments.Count);
+            Log.Info(Localizer.Format("#LOC_lTech_6") + experiments.Count);
             if (experiments.Count == 0)
             {
-                ConfigNode[] allExperiment = GameDatabase.Instance.GetConfigNodes("EXPERIMENT_DEFINITION");
+                ConfigNode[] allExperiment = GameDatabase.Instance.GetConfigNodes(Localizer.Format("#LOC_lTech_7"));
                 foreach (var n in allExperiment)
                 {
-                    if (n.HasNode("LTECH"))
+                    if (n.HasNode(Localizer.Format("#LOC_lTech_8")))
                     {
-                        string id = "";
+                        string id = Localizer.Format("#LOC_lTech_9");
                         uint biomeMask = 0, situationMask = 0;
 
-                        n.TryGetValue("id", ref id);
-                        n.TryGetValue("biomeMask", ref biomeMask);
-                        n.TryGetValue("situationMask", ref situationMask);
-                        Log.Info("EXPERIMENT_DEFINITION, id: " + id);
+                        n.TryGetValue(Localizer.Format("#LOC_lTech_10"), ref id);
+                        n.TryGetValue(Localizer.Format("#LOC_lTech_11"), ref biomeMask);
+                        n.TryGetValue(Localizer.Format("#LOC_lTech_12"), ref situationMask);
+                        Log.Info(Localizer.Format("#LOC_lTech_13") + id);
 
-                        ConfigNode node = n.GetNode("LTECH");
+                        ConfigNode node = n.GetNode(Localizer.Format("#LOC_lTech_14"));
                         var data = new LtScience.Modules.Experiment().Load(id, node);
                         data.biomeMask = biomeMask;
                         data.situationMask = situationMask;
@@ -187,7 +188,7 @@ namespace LtScience
 
                 GameEvents.onHideUI.Remove(OnHideUi);
                 GameEvents.onShowUI.Remove(OnShowUi);
-                StopCoroutine("SlowUpdate");
+                StopCoroutine(Localizer.Format("#LOC_lTech_15"));
 
                 // Handle toolbars
                 DestroyAppIcon();
@@ -210,7 +211,7 @@ namespace LtScience
                     OnToolbarButtonToggle, OnToolbarButtonToggle,
                     ApplicationLauncher.AppScenes.SPACECENTER | ApplicationLauncher.AppScenes.FLIGHT,
                     MODID,
-                    "L-TechButton",
+                    Localizer.Format("#LOC_lTech_16"),
                    _stockOn, _stockOff,
                    _blizzyOn, _blizzyOff,
                     MODNAME
@@ -248,17 +249,17 @@ namespace LtScience
         List<Vessel> vesselsWithSkylab = new List<Vessel>();
         void FindVesselsWithSkylab(Vessel vesselDestroyed = null)
         {
-            Log.Info("Addon.FindVesselsWithSkylab");
+            Log.Info(Localizer.Format("#LOC_lTech_17"));
 
             vesselsWithSkylab.Clear();
 
             for (int vesselIdx = 0; vesselIdx < FlightGlobals.Vessels.Count; vesselIdx++)
             {
                 Vessel v = FlightGlobals.Vessels[vesselIdx];
-                Log.Info("vesselIdx[" + vesselIdx + "]: " + v.vesselName);
+                Log.Info(Localizer.Format("#LOC_lTech_18") + vesselIdx + Localizer.Format("#LOC_lTech_19") + v.vesselName);
                 if (vesselDestroyed != null && v.persistentId == vesselDestroyed.persistentId)
                 {
-                    Log.Info("Ignoring destroyed vessel: " + vesselDestroyed.vesselName);
+                    Log.Info(Localizer.Format("#LOC_lTech_20") + vesselDestroyed.vesselName);
                     continue;
                 }
                 if (v.packed)
@@ -266,7 +267,7 @@ namespace LtScience
                     for (int i2 = 0; i2 < v.protoVessel.protoPartSnapshots.Count; i2++)
                     {
                         ProtoPartSnapshot p = v.protoVessel.protoPartSnapshots[i2];
-                        var pms = p.FindModule("SkylabExperiment");
+                        var pms = p.FindModule(Localizer.Format("#LOC_lTech_21"));
                         if (pms != null)
                         {
                             vesselsWithSkylab.Add(v);
@@ -279,13 +280,13 @@ namespace LtScience
         }
         IEnumerator SlowUpdate()
         {
-            Log.Info("Addon.SlowUpdate started");
+            Log.Info(Localizer.Format("#LOC_lTech_22"));
             if (vesselsWithSkylab != null)
 
                 while (true)
                 {
                     // Look at each vessel with one or more Skylab parts
-                    Log.Info("SlowUpdate, vesselsWithSkylab.Count(): " + vesselsWithSkylab.Count());
+                    Log.Info(Localizer.Format("#LOC_lTech_23") + vesselsWithSkylab.Count());
 
                     foreach (var v in vesselsWithSkylab)
                     {
@@ -295,7 +296,7 @@ namespace LtScience
                             foreach (ProtoPartSnapshot ppsSkylab in v.protoVessel.protoPartSnapshots)
                             {
                                 // Find the part(s) which have the SkylabExperiment
-                                ProtoPartModuleSnapshot pms = ppsSkylab.FindModule("SkylabExperiment");
+                                ProtoPartModuleSnapshot pms = ppsSkylab.FindModule(Localizer.Format("#LOC_lTech_24"));
                                 if (pms != null)
                                 {
                                     // Check for active experiments
@@ -380,7 +381,7 @@ namespace LtScience
                                                         }
                                                         data.processedResource += totalAmtNeeded - Math.Max(0, amtNeeded);
 
-                                                        Log.Info("processedResource: " + data.processedResource);
+                                                        Log.Info(Localizer.Format("#LOC_lTech_25") + data.processedResource);
 
                                                         data.lastTimeUpdated = Planetarium.GetUniversalTime();
                                                         data.Save(dataNode);
@@ -464,46 +465,46 @@ namespace LtScience
             string step = string.Empty;
             try
             {
-                step = "0 - Start";
+                step = Localizer.Format("#LOC_lTech_26");
                 if ( /* (HighLogic.LoadedScene == GameScenes.SPACECENTER || HighLogic.LoadedSceneIsFlight) && */
                     ShowUi && !Utils.IsPauseMenuOpen())
                 {
-                    step = "2 - Can show settings window - true";
+                    step = Localizer.Format("#LOC_lTech_27");
                     if (WindowSettings.showWindow)
                     {
-                        step = "3 - Show settings window";
+                        step = Localizer.Format("#LOC_lTech_28");
                         WindowSettings.position = ClickThruBlocker.GUILayoutWindow(settingsID, WindowSettings.position, WindowSettings.Display, WindowSettings.title, GUILayout.MinHeight(20));
                     }
                     else
                     {
-                        step = "3 - Hide settings window";
+                        step = Localizer.Format("#LOC_lTech_29");
                         WindowSettings.showWindow = false;
                     }
                 }
                 else
                 {
-                    step = "2 - Can show settings window - false";
+                    step = Localizer.Format("#LOC_lTech_30");
                 }
 
 #if false
-                step = "1 - Show Interface";
+                step = Localizer.Format("#LOC_lTech_31");
                 if (Utils.CanShowSkylab())
                 {
-                    step = "4 - Can show Skylab window - true";
+                    step = Localizer.Format("#LOC_lTech_32");
                     if (WindowSkylab.showWindow)
                     {
-                        step = "5 - Show Skylab window";
+                        step = Localizer.Format("#LOC_lTech_33");
                         WindowSkylab.position = ClickThruBlocker.GUILayoutWindow(windowSkylabID, WindowSkylab.position, WindowSkylab.Display, WindowSkylab.title, GUILayout.MinHeight(20));
                     }
                     else
                     {
-                        step = "5 - Hide Skylab window";
+                        step = Localizer.Format("#LOC_lTech_34");
                         WindowSkylab.showWindow = false;
                     }
                 }
                 else
                 {
-                    step = "4 - Can show Skylab window - false";
+                    step = Localizer.Format("#LOC_lTech_35");
                 }
 #endif
             }
