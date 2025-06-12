@@ -11,10 +11,10 @@ namespace LtScience.Utilities
     public class LTech_1 : GameParameters.CustomParameterNode
     {
         internal static LTech_1 fetch = null;
-        public override string Title { get { return Localizer.Format("#LOC_lTech_215"); } }
+        public override string Title { get { return ""; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return Localizer.Format("#LOC_lTech_216"); } }
-        public override string DisplaySection { get { return Localizer.Format("#LOC_lTech_217"); } }
+        public override string Section { get { return "L-Tech"; } }
+        public override string DisplaySection { get { return "L-Tech"; } }
         public override int SectionOrder { get { return 1; } }
         public override bool HasPresets { get { return true; } }
 
@@ -49,10 +49,10 @@ namespace LtScience.Utilities
 
     public class LTech_2 : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return Localizer.Format("#LOC_lTech_218"); } }
+        public override string Title { get { return ""; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return Localizer.Format("#LOC_lTech_219"); } }
-        public override string DisplaySection { get { return Localizer.Format("#LOC_lTech_220"); } }
+        public override string Section { get { return "L-Tech"; } }
+        public override string DisplaySection { get { return "L-Tech"; } }
         public override int SectionOrder { get { return 2; } }
         public override bool HasPresets { get { return true; } }
 
