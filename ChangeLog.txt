@@ -1,11 +1,5 @@
 Changelog
 
-0.5.3.2
-	Fixed another issue with localization and string formatting
-
-0.5.3.1
-	Fixed minor localization bug in settings page (not displaying title properly)
-
 0.5.3
 	Added RealFuels/ModularFuelTanks support
 	Fixed typo in experiment result (KeringFlyingLowWater now KerbinFlyingLowWater)
