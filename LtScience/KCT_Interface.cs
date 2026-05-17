@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//using KerbalConstructionTime;
+using KerbalConstructionTime;
 using UnityEngine;
 //using KSP_Log;
+
 
 namespace LtScience
 {
