@@ -2,13 +2,10 @@ using KSP.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LtScience.Utilities;
 
-using KerbalConstructionTime;
+//using KerbalConstructionTime;
 using UnityEngine;
-using KSP_Log;
+//using KSP_Log;
 
 namespace LtScience
 {
@@ -20,7 +17,7 @@ namespace LtScience
         {
             if (!KCT_GameStates.Enabled)
                 return 1f;
-
+            
             double kctTotals = 0;
             if (HighLogic.CurrentGame.Parameters.CustomParams<LTech_2>().useKCTDevelopment)
                 kctTotals = KCT_GameStates.SciencePointsAllocated;
